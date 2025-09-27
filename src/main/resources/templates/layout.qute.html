@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ?: 'Acofitec'}</title>
+    <meta
+      name="description"
+      content="{description ?: 'Impulsamos la innovación con comunidad y colaboración.'}"
+    />
+    <meta property="og:title" content="{title ?: 'Acofitec'}" />
+    <meta
+      property="og:description"
+      content="{description ?: 'Impulsamos la innovación con comunidad y colaboración.'}"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="/">
+          <img src="/brand/acofitec-logo.svg" alt="Acofitec" class="brand-logo" />
+          <span class="brand-name">Acofitec</span>
+        </a>
+        <nav class="site-nav">
+          <a href="/">Inicio</a>
+          <a href="/sobre">Sobre</a>
+          <a href="/eventos">Eventos</a>
+          <a href="/comunidades">Comunidades</a>
+          <a href="/proyectos">Proyectos</a>
+          <a href="/contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+    <main class="site-main container">
+      {#insert}
+        <p>Contenido próximamente.</p>
+      {/insert}
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-links">
+        <a href="/privacidad">Privacidad</a>
+        <a href="/cookies">Cookies</a>
+      </div>
+      <p class="footer-copy">&copy; {currentYear ?: now().year} Acofitec. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>
