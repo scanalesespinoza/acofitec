@@ -1,27 +1,45 @@
 {@layout layout}
+{#let title='Acofitec — Comunidad, Eventos y Open Source', description='Impulsamos la innovación con comunidad y colaboración.', subtitle='Impulsamos la innovación con comunidad y colaboración.', heroTitle='Acofitec' /}
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>Innovación con comunidad</h1>
-    <p>
-      Acofitec conecta a personas, organizaciones y proyectos para acelerar el
-      impacto tecnológico en la región.
-    </p>
-    <a class="cta" href="#">Únete</a>
+<section class="hero" aria-labelledby="home-hero-title">
+  <div class="hero-content">
+    <h1 id="home-hero-title">{heroTitle ?: title ?: 'Acofitec'}</h1>
+    <p class="hero-subtitle">{subtitle ?: 'Impulsamos la innovación con comunidad y colaboración.'}</p>
+    <div class="hero-actions">
+      <a
+        class="cta"
+        href="/contacto"
+        title="Ir a la página de contacto de Acofitec"
+        aria-label="Únete a la comunidad Acofitec"
+        >Únete</a
+      >
+    </div>
   </div>
 </section>
 
-<section class="highlights">
-  <article>
-    <h2>Aprende y comparte</h2>
-    <p>Charlas, talleres y espacios de colaboración abiertos a la comunidad.</p>
-  </article>
-  <article>
-    <h2>Construye proyectos</h2>
-    <p>Impulsa iniciativas con propósito junto a personas con talentos diversos.</p>
-  </article>
-  <article>
-    <h2>Conecta comunidades</h2>
-    <p>Tejemos redes que potencian el crecimiento de la industria tecnológica.</p>
-  </article>
+<section class="axes" aria-labelledby="axes-heading">
+  <div class="section-header">
+    <h2 id="axes-heading">Explora nuestros ejes</h2>
+    <p>Conecta con experiencias, personas y proyectos que impulsan la innovación.</p>
+  </div>
+  <div class="axes-grid">
+    <article class="axis-card">
+      <div class="axis-icon" aria-hidden="true">🎤</div>
+      <h3>Eventos</h3>
+      <p>Explora conferencias, charlas y workshops.</p>
+      <a class="axis-link" href="/eventos" title="Explorar eventos de Acofitec">Explorar</a>
+    </article>
+    <article class="axis-card">
+      <div class="axis-icon" aria-hidden="true">🤝</div>
+      <h3>Comunidades</h3>
+      <p>Conecta con grupos de estudiantes y profesionales.</p>
+      <a class="axis-link" href="/comunidades" title="Explorar comunidades de Acofitec">Explorar</a>
+    </article>
+    <article class="axis-card">
+      <div class="axis-icon" aria-hidden="true">🛠️</div>
+      <h3>Proyectos</h3>
+      <p>Descubre y contribuye a iniciativas open source.</p>
+      <a class="axis-link" href="/proyectos" title="Explorar proyectos de Acofitec">Explorar</a>
+    </article>
+  </div>
 </section>

@@ -1,5 +1,6 @@
 package io.acofitec.web;
 
+import io.quarkus.qute.Location;
 import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;
 import jakarta.inject.Inject;
@@ -8,14 +9,16 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("/")
-public class HomeResource {
+@Path("/comunidades")
+public class CommunitiesPageResource {
 
-  @Inject Template index;
+  @Inject
+  @Location("comunidades/list.stub")
+  Template comunidadesListStub;
 
   @GET
   @Produces(MediaType.TEXT_HTML)
-  public TemplateInstance home() {
-    return index.instance();
+  public TemplateInstance comunidades() {
+    return comunidadesListStub.instance();
   }
 }

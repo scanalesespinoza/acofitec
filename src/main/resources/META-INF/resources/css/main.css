@@ -1,8 +1,10 @@
 :root {
   --primary: #1f6feb;
   --text-color: #1f2933;
+  --muted-color: #475569;
   --background: #f8fafc;
   --surface: #ffffff;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 * {
@@ -15,6 +17,15 @@ body {
   color: var(--text-color);
   background: var(--background);
   line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid rgba(31, 111, 235, 0.45);
+  outline-offset: 3px;
 }
 
 img {
@@ -67,7 +78,6 @@ img {
 
 .site-nav a {
   text-decoration: none;
-  color: inherit;
   font-weight: 500;
   transition: color 0.2s ease;
 }
@@ -77,55 +87,134 @@ img {
 }
 
 .site-main {
-  padding: 3rem 0;
+  padding: 3.5rem 0 4rem;
 }
 
 .hero {
+  padding-bottom: 3rem;
+}
+
+.hero-content {
   display: grid;
-  gap: 2rem;
-  align-items: center;
-  min-height: 50vh;
+  gap: 1.75rem;
+  max-width: 52rem;
 }
 
-.hero-text h1 {
+.hero-content h1 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
-.hero-text p {
+.hero-subtitle {
   font-size: 1.125rem;
-  max-width: 32rem;
+  color: var(--muted-color);
+  margin: 0;
+  max-width: 36rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
 }
 
 .cta {
   display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.875rem 1.75rem;
+  padding: 0.9rem 1.9rem;
   background: var(--primary);
-  color: white;
+  color: #ffffff;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cta:hover {
+.cta:hover,
+.cta:focus-visible {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(31, 111, 235, 0.25);
+  box-shadow: 0 12px 24px rgba(31, 111, 235, 0.25);
 }
 
-.highlights {
+.axes {
   display: grid;
-  gap: 1.5rem;
-  margin-top: 4rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
 }
 
-.highlights article {
+.section-header {
+  max-width: 48rem;
+}
+
+.section-header h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  margin: 0 0 0.75rem;
+}
+
+.section-header p {
+  margin: 0;
+  color: var(--muted-color);
+}
+
+.axes-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: 1fr;
+}
+
+.axis-card {
   background: var(--surface);
-  padding: 1.75rem;
+  padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.axis-card:hover,
+.axis-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.14);
+}
+
+.axis-icon {
+  font-size: 2rem;
+}
+
+.axis-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.axis-card p {
+  margin: 0;
+  color: var(--muted-color);
+}
+
+.axis-link {
+  justify-self: flex-start;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.axis-link:hover,
+.axis-link:focus-visible {
+  text-decoration: underline;
+}
+
+.page-stub {
+  display: grid;
+  gap: 1rem;
+  max-width: 48rem;
+}
+
+.page-stub h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+
+.page-stub p {
+  margin: 0;
+  color: var(--muted-color);
 }
 
 .about {
@@ -158,7 +247,8 @@ img {
   text-decoration: none;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-links a:focus-visible {
   text-decoration: underline;
 }
 
@@ -171,5 +261,17 @@ img {
   .site-nav {
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+@media (min-width: 640px) {
+  .axes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .axes-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
