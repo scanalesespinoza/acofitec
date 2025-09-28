@@ -3,16 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title ?: 'Acofitec'}</title>
-    <meta
-      name="description"
-      content="{description ?: 'Impulsamos la innovación con comunidad y colaboración.'}"
-    />
-    <meta property="og:title" content="{title ?: 'Acofitec'}" />
-    <meta
-      property="og:description"
-      content="{description ?: 'Impulsamos la innovación con comunidad y colaboración.'}"
-    />
+    {#let pageTitle=title ?: 'Acofitec', pageDescription=description ?: 'Impulsamos la innovación con comunidad y colaboración.' /}
+    <title>{pageTitle}</title>
+    <meta name="description" content="{pageDescription}" />
+    <meta property="og:title" content="{pageTitle}" />
+    <meta property="og:description" content="{pageDescription}" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="/css/main.css" />
   </head>
