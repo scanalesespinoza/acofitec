@@ -75,4 +75,4 @@ jobs:
           PR_NUMBER="${{ steps.pr.outputs.number }}"
           echo "Checks summary:"
           gh pr checks $PR_NUMBER --repo "${{ github.repository }}" || true
-          gh pr merge $PR_NUMBER --squash --delete-branch --repo "${{ github.repository }}"
+          gh pr merge $PR_NUMBER --squash --delete-branch --repo "${{ github.repository }}" --yes
