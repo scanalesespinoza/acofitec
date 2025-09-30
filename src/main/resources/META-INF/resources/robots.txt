@@ -1,0 +1,4 @@
+# Actualizar dominio absoluto en prod vía reversa/ingress si aplica
+User-agent: *
+Allow: /
+Sitemap: /sitemap.xml
