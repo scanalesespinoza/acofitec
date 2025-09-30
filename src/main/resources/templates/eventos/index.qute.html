@@ -1,0 +1,306 @@
+{@layout layout}
+{#let
+  title='Eventos — Acofitec'
+  description='Hub organizacional de eventos: estructura, líderes, definiciones e integración con EventFlow.'
+  canonical='/eventos'
+}
+
+<header class="events-header">
+  <h1 id="eventos-title">Eventos Acofitec</h1>
+  <p class="events-subtitle">
+    Conoce cómo organizamos nuestras iniciativas, quiénes las impulsan y consulta los eventos publicados en EventFlow.
+  </p>
+</header>
+
+<section class="hub-section" aria-labelledby="estructura-heading">
+  <div class="section-heading">
+    <h2 id="estructura-heading">Estructura organizativa</h2>
+    <p>Roles y niveles que articulan la experiencia de eventos en Acofitec.</p>
+  </div>
+  <div class="structure-tree" role="presentation">
+    <ol class="structure-list">
+      <li>
+        Consejo Estratégico
+        <p class="structure-note">Define visión anual, presupuesto y focos de impacto.</p>
+        <ol>
+          <li>
+            Célula de Programación
+            <p class="structure-note">Curaduría de agendas, speakers y experiencia de contenidos.</p>
+            <ol>
+              <li>Lead de Contenido</li>
+              <li>Coordinador/a de Speakers</li>
+              <li>Equipo de Experiencia</li>
+            </ol>
+          </li>
+          <li>
+            Célula Operativa
+            <p class="structure-note">Logística, producción y relacionamiento con sedes y partners.</p>
+            <ol>
+              <li>Lead de Operaciones</li>
+              <li>Coordinador/a de Voluntariado</li>
+              <li>Equipo de Producción</li>
+            </ol>
+          </li>
+          <li>
+            Comunidad &amp; Partnerships
+            <p class="structure-note">Activación de comunidades locales, sponsors y alianzas.</p>
+            <ol>
+              <li>Lead de Comunidad</li>
+              <li>Gestor/a de Alianzas</li>
+              <li>Equipo de Comunicación</li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="hub-section" aria-labelledby="leaders-heading">
+  <div class="section-heading">
+    <h2 id="leaders-heading">Líderes y core team</h2>
+    <p>Personas que coordinan y habilitan la ejecución de cada evento.</p>
+  </div>
+  <div class="leaders-grid" role="list">
+    <article class="leader-card" role="listitem">
+      <div class="leader-avatar" aria-hidden="true">👩‍💼</div>
+      <div>
+        <h3>Laura Méndez</h3>
+        <p class="leader-role">Directora de Programación</p>
+      </div>
+    </article>
+    <article class="leader-card" role="listitem">
+      <div class="leader-avatar" aria-hidden="true">🧑‍💻</div>
+      <div>
+        <h3>Samuel Ortega</h3>
+        <p class="leader-role">Lead de Operaciones</p>
+      </div>
+    </article>
+    <article class="leader-card" role="listitem">
+      <div class="leader-avatar" aria-hidden="true">🧑‍🎤</div>
+      <div>
+        <h3>Florencia Paredes</h3>
+        <p class="leader-role">Coordinadora de Speakers</p>
+      </div>
+    </article>
+    <article class="leader-card" role="listitem">
+      <div class="leader-avatar" aria-hidden="true">🧑‍🤝‍🧑</div>
+      <div>
+        <h3>Renzo Cabrera</h3>
+        <p class="leader-role">Gestor de Comunidad</p>
+      </div>
+    </article>
+    <article class="leader-card" role="listitem">
+      <div class="leader-avatar" aria-hidden="true">📣</div>
+      <div>
+        <h3>Anaís Ledesma</h3>
+        <p class="leader-role">Comunicación y Partnerships</p>
+      </div>
+    </article>
+    <article class="leader-card" role="listitem">
+      <div class="leader-avatar" aria-hidden="true">🎨</div>
+      <div>
+        <h3>Iván Salazar</h3>
+        <p class="leader-role">Diseño de Experiencia</p>
+      </div>
+    </article>
+  </div>
+  <div class="section-cta">
+    <a class="link-arrow" href="/eventos/lideres">Ver todos los líderes</a>
+  </div>
+</section>
+
+<section class="hub-section" aria-labelledby="handbook-heading">
+  <div class="section-heading">
+    <h2 id="handbook-heading">Definiciones clave &amp; handbook</h2>
+    <p>Glosario base para alinear vocabulario y prácticas en todas las regiones.</p>
+  </div>
+  <dl class="handbook-list">
+    <div>
+      <dt>Evento insignia</dt>
+      <dd>Experiencia anual que reúne a comunidades y partners estratégicos.</dd>
+    </div>
+    <div>
+      <dt>Track temático</dt>
+      <dd>Agrupación de charlas y workshops con foco en un dominio específico.</dd>
+    </div>
+    <div>
+      <dt>Community Lab</dt>
+      <dd>Sesiones colaborativas donde equipos locales co-diseñan futuros eventos.</dd>
+    </div>
+    <div>
+      <dt>Kit de producción</dt>
+      <dd>Checklist, plantillas y lineamientos para ejecutar un evento de principio a fin.</dd>
+    </div>
+  </dl>
+  <div class="section-cta">
+    <a class="link-arrow" href="/eventos/handbook">Leer el handbook completo</a>
+  </div>
+</section>
+
+<section class="hub-section" aria-labelledby="eventflow-heading">
+  <div class="section-heading">
+    <h2 id="eventflow-heading">Eventos publicados (EventFlow)</h2>
+    <p>Consulta eventos próximos y pasados sincronizados automáticamente desde EventFlow.</p>
+  </div>
+
+  {#if apiError || (upcomingEvents.isEmpty && pastEvents.isEmpty)}
+    <div class="eventflow-fallback">
+      <p>No pudimos conectar con EventFlow en este momento. Puedes consultarlo directamente.</p>
+      <a class="cta" href="{eventFlowBaseUrl}" target="_blank" rel="noopener noreferrer">Abrir EventFlow</a>
+    </div>
+  {#else}
+    <form class="events-search" role="search" aria-label="Buscar eventos">
+      <label class="visually-hidden" for="event-search-input">Buscar por título o descripción</label>
+      <input
+        id="event-search-input"
+        type="search"
+        name="q"
+        placeholder="Buscar eventos..."
+        autocomplete="off"
+        data-events-search
+      />
+    </form>
+
+    <div class="events-tabs" role="tablist" aria-label="Eventos publicados">
+      <button
+        type="button"
+        class="tab-button is-active"
+        role="tab"
+        aria-selected="true"
+        id="tab-upcoming"
+        data-tab="upcoming"
+        aria-controls="panel-upcoming"
+      >
+        Próximos
+      </button>
+      <button
+        type="button"
+        class="tab-button"
+        role="tab"
+        aria-selected="false"
+        id="tab-past"
+        data-tab="past"
+        aria-controls="panel-past"
+      >
+        Pasados
+      </button>
+    </div>
+
+    <div class="events-panels">
+      <div
+        class="events-panel"
+        id="panel-upcoming"
+        role="tabpanel"
+        aria-labelledby="tab-upcoming"
+        data-panel="upcoming"
+      >
+        {#if upcomingEvents.isEmpty}
+          <p class="events-empty" data-empty>No hay eventos próximos publicados.</p>
+        {#else}
+          <div class="events-grid">
+            {#for event in upcomingEvents}
+              <article
+                class="event-card"
+                data-event-card
+                data-title="{event.titleSafe}"
+                data-description="{event.descriptionSafe}"
+              >
+                <header class="event-card-header">
+                  <h3>{event.titleSafe}</h3>
+                  {#if event.modeSafe}
+                    <span class="badge badge-mode">{event.modeLabel()}</span>
+                  {/if}
+                </header>
+                {#if event.displayDate}
+                  <p class="event-card-date">{event.displayDate}</p>
+                {/if}
+                {#if event.hasLocation}
+                  <p class="event-card-location">{event.location}</p>
+                {/if}
+                {#if event.descriptionSafe}
+                  <p class="event-card-description">{event.descriptionSafe}</p>
+                {/if}
+                {#if !event.tagsSafe.isEmpty}
+                  <ul class="event-card-tags">
+                    {#for tag in event.tagsSafe}
+                      <li>{tag}</li>
+                    {/for}
+                  </ul>
+                {/if}
+                <a
+                  class="event-card-link"
+                  href="{event.detailUrlSafe}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver en EventFlow
+                </a>
+              </article>
+            {/for}
+          </div>
+          <p class="events-empty" data-empty hidden>No se encontraron eventos con ese criterio.</p>
+        {/if}
+      </div>
+
+      <div
+        class="events-panel"
+        id="panel-past"
+        role="tabpanel"
+        aria-labelledby="tab-past"
+        data-panel="past"
+        hidden
+      >
+        {#if pastEvents.isEmpty}
+          <p class="events-empty" data-empty>No hay eventos pasados disponibles.</p>
+        {#else}
+          <div class="events-grid">
+            {#for event in pastEvents}
+              <article
+                class="event-card"
+                data-event-card
+                data-title="{event.titleSafe}"
+                data-description="{event.descriptionSafe}"
+              >
+                <header class="event-card-header">
+                  <h3>{event.titleSafe}</h3>
+                  {#if event.modeSafe}
+                    <span class="badge badge-mode">{event.modeLabel()}</span>
+                  {/if}
+                </header>
+                {#if event.displayDate}
+                  <p class="event-card-date">{event.displayDate}</p>
+                {/if}
+                {#if event.hasLocation}
+                  <p class="event-card-location">{event.location}</p>
+                {/if}
+                {#if event.descriptionSafe}
+                  <p class="event-card-description">{event.descriptionSafe}</p>
+                {/if}
+                {#if !event.tagsSafe.isEmpty}
+                  <ul class="event-card-tags">
+                    {#for tag in event.tagsSafe}
+                      <li>{tag}</li>
+                    {/for}
+                  </ul>
+                {/if}
+                <a
+                  class="event-card-link"
+                  href="{event.detailUrlSafe}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver en EventFlow
+                </a>
+              </article>
+            {/for}
+          </div>
+          <p class="events-empty" data-empty hidden>No se encontraron eventos con ese criterio.</p>
+        {/if}
+      </div>
+    </div>
+  {/if}
+</section>
+
+<script src="/js/eventos-filtros.js" defer></script>
+{/let}
