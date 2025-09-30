@@ -3,16 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {#let
-      pageTitle=(title ?: 'Acofitec')
-      pageDescription=(description ?: 'Impulsamos la innovación con comunidad y colaboración.')
-    }
-    <title>{pageTitle}</title>
-    <meta name="description" content="{pageDescription}" />
-    <meta property="og:title" content="{pageTitle}" />
-    <meta property="og:description" content="{pageDescription}" />
-    {/let}
+    <title>{title ?: 'Acofitec — Comunidad, Eventos y Open Source'}</title>
+    <meta name="description" content="{description ?: 'Impulsamos la innovación con comunidad y colaboración.'}" />
+    <link rel="canonical" href="{canonical ?: '/'}" />
+    <meta property="og:title" content="{title ?: 'Acofitec — Comunidad, Eventos y Open Source'}" />
+    <meta property="og:description" content="{description ?: 'Impulsamos la innovación con comunidad y colaboración.'}" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="{canonical ?: '/'}" />
+    <meta property="og:image" content="{ogImage ?: '/brand/acofitec-logo.svg'}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{title ?: 'Acofitec — Comunidad, Eventos y Open Source'}" />
+    <meta name="twitter:description" content="{description ?: 'Impulsamos la innovación con comunidad y colaboración.'}" />
+    <meta name="twitter:image" content="{ogImage ?: '/brand/acofitec-logo.svg'}" />
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>

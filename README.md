@@ -66,3 +66,35 @@ que podrás definir según tu entorno:
 - `OIDC_AUTH_SERVER_URL` (por defecto `http://localhost/oidc`).
 
 Estas variables sirven como placeholders para futuras integraciones OIDC.
+
+## SEO v1
+
+El layout principal (`src/main/resources/templates/layout.qute.html`) incluye metadatos
+SEO mínimos con valores por defecto:
+
+- `title`: `Acofitec — Comunidad, Eventos y Open Source`.
+- `description`: `Impulsamos la innovación con comunidad y colaboración.`
+- `canonical`: `/`.
+- `ogImage`: `/brand/acofitec-logo.svg`.
+
+Puedes sobreescribir cualquiera de estas variables desde cada vista Qute con un bloque
+`{#let}` al inicio del template o enviándolas desde el controlador en el modelo. Ejemplo
+directo en el template:
+
+```qute-html
+{#let
+  title='Acofitec — Comunidad, Eventos y Open Source'
+  description='Conectamos personas, eventos y proyectos para aprender, crear y crecer.'
+  canonical='/'
+  ogImage='/brand/acofitec-logo.svg'
+/}
+<!-- resto del template -->
+{/let}
+```
+
+Los archivos estáticos `sitemap.xml` y `robots.txt` se encuentran en
+`src/main/resources/META-INF/resources/` y se sirven desde `/sitemap.xml` y
+`/robots.txt` respectivamente. Por defecto se reutiliza `brand/acofitec-logo.svg`
+como imagen OpenGraph/Twitter; puedes reemplazarla aportando una ruta diferente
+mediante la variable `ogImage` o incorporando un asset propio en el mismo
+directorio (agregándolo fuera de este PR si necesitas un PNG dedicado).
