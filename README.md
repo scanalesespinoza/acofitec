@@ -22,6 +22,29 @@ principales:
 - `/` Página de inicio con hero, CTA y navegación.
 - `/sobre` Página con Visión y Misión de Acofitec.
 
+### Identidad simulada en desarrollo
+
+En los perfiles `dev` y `test` no es necesario tener un servidor OIDC en ejecución.
+El proyecto expone una identidad mock configurable que emula la información básica
+que entregaría el proveedor real.
+
+Valores por defecto en modo `dev`:
+
+- Usuario: `developer`
+- Roles: `admin`, `user`
+- Email: `developer@acofitec.local`
+- Subject: `00000000-0000-0000-0000-000000000001`
+
+Puedes modificar la identidad en caliente a través de los siguientes headers
+HTTP al invocar los endpoints protegidos:
+
+- `X-Mock-User`: nombre de usuario a utilizar.
+- `X-Mock-Roles`: lista de roles separada por comas.
+- `Authorization`: token (se acepta tanto un valor libre como `Bearer <token>`).
+
+En caso de necesitar otros atributos puedes ajustarlos en `application.properties`
+utilizando el prefijo `acofitec.security.mock`.
+
 ## Build del proyecto
 
 Genera el paquete ejecutable omitiendo tests (no se incluyen aún):
