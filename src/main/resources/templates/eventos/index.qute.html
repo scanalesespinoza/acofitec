@@ -1,0 +1,289 @@
+{@layout layout}
+{#let
+  title='Eventos — Acofitec'
+  description='Hub organizacional de eventos: estructura, líderes, definiciones e integración con EventFlow.'
+  canonical='/eventos'
+/}
+
+<h1 id="eventos-title">Eventos Acofitec</h1>
+
+<section class="section-block structure-block" aria-labelledby="estructura-title">
+  <div class="section-header">
+    <h2 id="estructura-title">Estructura del hub</h2>
+    <p>Así organizamos nuestras iniciativas y rituales.</p>
+  </div>
+  <div class="structure-tree" role="list">
+    <ul class="tree">
+      <li>
+        <span class="tree-label">Hub de Eventos</span>
+        <ul>
+          <li>
+            <span class="tree-label">Planificación anual</span>
+            <ul>
+              <li><span class="tree-label">Cumbres y conferencias</span></li>
+              <li><span class="tree-label">Ciclos temáticos trimestrales</span></li>
+              <li><span class="tree-label">Sesiones hands-on mensuales</span></li>
+            </ul>
+          </li>
+          <li>
+            <span class="tree-label">Equipos de producción</span>
+            <ul>
+              <li><span class="tree-label">Contenido &amp; speakers</span></li>
+              <li><span class="tree-label">Operaciones &amp; logística</span></li>
+              <li><span class="tree-label">Comunidad &amp; partnerships</span></li>
+            </ul>
+          </li>
+          <li>
+            <span class="tree-label">Medición de impacto</span>
+            <ul>
+              <li><span class="tree-label">Satisfacción de participantes</span></li>
+              <li><span class="tree-label">Seguimiento de proyectos</span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-block leaders-block" aria-labelledby="leaders-title">
+  <div class="section-header">
+    <h2 id="leaders-title">Líderes del hub</h2>
+    <p>Personas que impulsan la agenda de eventos.</p>
+  </div>
+  <div class="leaders-grid">
+    <article class="leader-card">
+      <div class="leader-avatar" aria-hidden="true">AL</div>
+      <div class="leader-content">
+        <h3>Andrea López</h3>
+        <p>Coordinación general</p>
+      </div>
+    </article>
+    <article class="leader-card">
+      <div class="leader-avatar" aria-hidden="true">MC</div>
+      <div class="leader-content">
+        <h3>Martín Cruz</h3>
+        <p>Programación &amp; speakers</p>
+      </div>
+    </article>
+    <article class="leader-card">
+      <div class="leader-avatar" aria-hidden="true">SR</div>
+      <div class="leader-content">
+        <h3>Sofía Ramírez</h3>
+        <p>Operaciones</p>
+      </div>
+    </article>
+    <article class="leader-card">
+      <div class="leader-avatar" aria-hidden="true">GD</div>
+      <div class="leader-content">
+        <h3>Gabriel Díaz</h3>
+        <p>Alianzas estratégicas</p>
+      </div>
+    </article>
+    <article class="leader-card">
+      <div class="leader-avatar" aria-hidden="true">LC</div>
+      <div class="leader-content">
+        <h3>Lucía Contreras</h3>
+        <p>Experiencia de participantes</p>
+      </div>
+    </article>
+    <article class="leader-card">
+      <div class="leader-avatar" aria-hidden="true">HV</div>
+      <div class="leader-content">
+        <h3>Hugo Valdés</h3>
+        <p>Datos &amp; métricas</p>
+      </div>
+    </article>
+  </div>
+  <div class="section-actions">
+    <a class="link-button" href="/eventos/lideres">Ver todos</a>
+  </div>
+</section>
+
+<section class="section-block definitions-block" aria-labelledby="definitions-title">
+  <div class="section-header">
+    <h2 id="definitions-title">Definiciones clave</h2>
+    <p>Lenguaje compartido para planificar y ejecutar.</p>
+  </div>
+  <dl class="definitions-list">
+    <div class="definition-item">
+      <dt>Evento insignia</dt>
+      <dd>Activaciones de alto impacto, con foco regional y participación de aliados clave.</dd>
+    </div>
+    <div class="definition-item">
+      <dt>Encuentro cápsula</dt>
+      <dd>Sesiones breves y recurrentes para actualizar aprendizajes de la comunidad.</dd>
+    </div>
+    <div class="definition-item">
+      <dt>Playbook operativo</dt>
+      <dd>Checklist vivo para producción, comunicación y seguimiento post-evento.</dd>
+    </div>
+    <div class="definition-item">
+      <dt>EventFlow</dt>
+      <dd>Plataforma centralizada para publicación, registro y analítica de eventos.</dd>
+    </div>
+  </dl>
+  <div class="section-actions">
+    <a class="link-button" href="/eventos/handbook">Leer el handbook</a>
+  </div>
+</section>
+
+<section class="section-block events-block" aria-labelledby="eventflow-title">
+  <div class="section-header">
+    <h2 id="eventflow-title">Eventos publicados (EventFlow)</h2>
+    <p>Conecta con las actividades oficiales y revisa el historial reciente.</p>
+  </div>
+
+  <div class="events-toolbar">
+    <div class="tabs" role="tablist" aria-label="Filtrar eventos publicados">
+      <button
+        type="button"
+        class="tab-button is-active"
+        role="tab"
+        id="tab-upcoming"
+        aria-selected="true"
+        aria-controls="panel-upcoming"
+        data-tab-target="upcoming"
+      >
+        Próximos
+      </button>
+      <button
+        type="button"
+        class="tab-button"
+        role="tab"
+        id="tab-past"
+        aria-selected="false"
+        aria-controls="panel-past"
+        data-tab-target="past"
+      >
+        Pasados
+      </button>
+    </div>
+    <div class="events-search">
+      <label class="visually-hidden" for="event-search">Buscar eventos por título o descripción</label>
+      <input
+        type="search"
+        id="event-search"
+        name="event-search"
+        placeholder="Buscar eventos por título o descripción"
+        aria-label="Buscar eventos por título o descripción"
+        data-event-search
+      />
+    </div>
+  </div>
+
+  {#if apiError || (upcomingEvents.isEmpty && pastEvents.isEmpty)}
+    <div class="events-fallback" role="alert">
+      <p>No pudimos cargar los eventos desde EventFlow en este momento.</p>
+      <a class="link-button" href="{eventFlowPortalUrl}" rel="noopener noreferrer" target="_blank">Abrir EventFlow</a>
+    </div>
+  {#else}
+    <div
+      id="panel-upcoming"
+      class="events-grid"
+      role="tabpanel"
+      aria-labelledby="tab-upcoming"
+      data-tab-panel="upcoming"
+    >
+      {#if upcomingEvents.isEmpty}
+        <p class="empty-state">No hay eventos próximos publicados por ahora.</p>
+      {#else}
+        {#for event in upcomingEvents}
+          <article
+            class="event-card"
+            data-title="{event.title}"
+            data-description="{event.shortDescription}"
+          >
+            <header class="event-card-header">
+              <h3>{event.title}</h3>
+              {#if event.mode != null && !event.mode.isBlank}
+                <span class="badge">{event.mode}</span>
+              {/if}
+            </header>
+            <p class="event-date">{event.formattedDate}</p>
+            {#if event.location != null && !event.location.isBlank}
+              <p class="event-location">{event.location}</p>
+            {/if}
+            <p class="event-description">{event.shortDescription}</p>
+            {#if !event.tags.isEmpty}
+              <ul class="event-tags">
+                {#for tag in event.tags}
+                  <li><span class="tag">{tag}</span></li>
+                {/for}
+              </ul>
+            {/if}
+            <div class="event-actions">
+              <a
+                class="link-button"
+                href="{event.detailUrl ?: eventFlowPortalUrl}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver en EventFlow
+              </a>
+            </div>
+          </article>
+        {/for}
+        <p class="empty-state is-hidden" data-search-empty>
+          No encontramos eventos que coincidan con la búsqueda actual.
+        </p>
+      {/if}
+    </div>
+
+    <div
+      id="panel-past"
+      class="events-grid is-hidden"
+      role="tabpanel"
+      aria-labelledby="tab-past"
+      data-tab-panel="past"
+    >
+      {#if pastEvents.isEmpty}
+        <p class="empty-state">Aún no registramos eventos pasados en EventFlow.</p>
+      {#else}
+        {#for event in pastEvents}
+          <article
+            class="event-card"
+            data-title="{event.title}"
+            data-description="{event.shortDescription}"
+          >
+            <header class="event-card-header">
+              <h3>{event.title}</h3>
+              {#if event.mode != null && !event.mode.isBlank}
+                <span class="badge">{event.mode}</span>
+              {/if}
+            </header>
+            <p class="event-date">{event.formattedDate}</p>
+            {#if event.location != null && !event.location.isBlank}
+              <p class="event-location">{event.location}</p>
+            {/if}
+            <p class="event-description">{event.shortDescription}</p>
+            {#if !event.tags.isEmpty}
+              <ul class="event-tags">
+                {#for tag in event.tags}
+                  <li><span class="tag">{tag}</span></li>
+                {/for}
+              </ul>
+            {/if}
+            <div class="event-actions">
+              <a
+                class="link-button"
+                href="{event.detailUrl ?: eventFlowPortalUrl}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver en EventFlow
+              </a>
+            </div>
+          </article>
+        {/for}
+        <p class="empty-state is-hidden" data-search-empty>
+          No encontramos eventos que coincidan con la búsqueda actual.
+        </p>
+      {/if}
+    </div>
+  {/if}
+</section>
+
+<script src="/js/eventos-filtros.js" defer></script>
+
+{/let}
